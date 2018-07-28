@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Mood View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MoodViewController" customModule="CowMeNow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="aaj-PA-eov">
+                                <rect key="frame" x="0.0" y="126" width="375" height="557"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MoodTableViewCell" rowHeight="121" id="MTH-7d-tcR" customClass="MoodTableViewCell" customModule="CowMeNow" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="121"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MTH-7d-tcR" id="mr3-a5-Re5">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intelligent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgz-17-HMS">
+                                                    <rect key="frame" x="15" y="11" width="344" height="99"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="99" id="IIz-x0-5Cd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Wgz-17-HMS" firstAttribute="top" secondItem="mr3-a5-Re5" secondAttribute="top" constant="11" id="EpO-AU-tA1"/>
+                                                <constraint firstAttribute="bottom" secondItem="Wgz-17-HMS" secondAttribute="bottom" constant="10.5" id="Ql2-YJ-g7u"/>
+                                                <constraint firstItem="Wgz-17-HMS" firstAttribute="leading" secondItem="mr3-a5-Re5" secondAttribute="leading" constant="15" id="mTl-2d-znc"/>
+                                                <constraint firstAttribute="trailing" secondItem="Wgz-17-HMS" secondAttribute="trailing" constant="16" id="ors-KF-rNT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="moodLabel" destination="Wgz-17-HMS" id="dpg-cx-h2e"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Ihw-J7-0rs"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="WvN-mu-psw"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0j-2f-gMo">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="fHO-Gc-VAW">
+                                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="SAVE" id="cfL-K5-4b9">
+                                            <color key="tintColor" red="0.0039215686269999999" green="0.16078431369999999" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="save:" destination="BYZ-38-t0r" id="lew-7M-tH1"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which word best describes your day?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="db5-df-HyA">
+                                <rect key="frame" x="16" y="97" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Kdm-dg-jgH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
+                                <color key="textColor" red="0.0039215686274509803" green="0.16078431372549018" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="C0j-2f-gMo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4nK-Im-jE7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="db5-df-HyA" secondAttribute="trailing" constant="16" id="D7y-vk-8md"/>
+                            <constraint firstItem="aaj-PA-eov" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OQf-tM-ROu"/>
+                            <constraint firstItem="aaj-PA-eov" firstAttribute="top" secondItem="db5-df-HyA" secondAttribute="bottom" constant="8" id="PUp-8J-prV"/>
+                            <constraint firstItem="C0j-2f-gMo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TiE-Ms-J5Z"/>
+                            <constraint firstItem="db5-df-HyA" firstAttribute="top" secondItem="C0j-2f-gMo" secondAttribute="bottom" constant="33" id="V3t-ZO-EII"/>
+                            <constraint firstItem="aaj-PA-eov" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="k33-Vl-eZd"/>
+                            <constraint firstItem="db5-df-HyA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="l30-rY-YDo"/>
+                            <constraint firstItem="aaj-PA-eov" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="16" id="lT8-Yx-Ch2"/>
+                            <constraint firstItem="C0j-2f-gMo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="naP-HN-UIE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="saveButton" destination="cfL-K5-4b9" id="k0d-Jg-gba"/>
+                        <outlet property="tableView" destination="aaj-PA-eov" id="o3H-gd-hgh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="117.39130434782609"/>
+        </scene>
+    </scenes>
+</document>
