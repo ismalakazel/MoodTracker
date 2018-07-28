@@ -28,3 +28,10 @@ public protocol ManagedTableViewCell {
      */
     func configure(model: Model)
 }
+
+
+extension ManagedTableViewCell {
+    static var identifier: String {
+        return String(describing: self)
+    }
+}

@@ -1,4 +1,5 @@
 import UIKit
+import CoreData
 
 
 /**
@@ -6,42 +7,67 @@ import UIKit
  A view controller that manages a table view of words you today.
  
  */
-internal class MoodViewController: UIViewController {
+internal class MoodViewController: UIViewController, ManagedObjectSettable {
+    
+    // MARK: - ManagedObjectSettable
+
+    var persistentContainer: PersistentContainer!
     
     // MARK: - UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ["Intelligent", "Okay", "Bad"].forEach { text in
+            let answer = Answer(moc: persistentContainer.viewContext)
+            answer.text = text
+        }
+        tableView.dataSource = dataSource
+        dataSource.fetch()
     }
 
+    // MARK: - Property
+    
+    private lazy var dataSource: ManagedTableViewDataSource<MoodTableViewCell>! = {
+        return ManagedTableViewDataSource<MoodTableViewCell>(tableView: tableView, moc: viewContext)
+    }()
+    
+    /// A context to save answers.
+    private lazy var viewContext: NSManagedObjectContext! = {
+       return persistentContainer.viewContext
+    }()
+    
     // MARK: - @IBOutlet
 
     @IBOutlet private weak var tableView: UITableView!
 
     @IBOutlet private weak var saveButton: UIBarButtonItem!
     
-    // MARK: - Property
-
-    private let dataSource: [String] = ["Intelligent", "Stupid", "Okay"]
+    @IBOutlet weak var questionLabel: UILabel!
     
     // MARK: - @IBAction
 
     @IBAction private func save(_ sender: UIBarButtonItem) {
-        print("ToDo: Save mood selection to Core Data")
-    }
-}
-
-// MARK: - UITableViewDataSource
-
-extension MoodViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        guard let selection = tableView.indexPathForSelectedRow else { return }
+        viewContext.performChanges {
+            let answer = self.dataSource.objectAtIndexPath(selection)
+            answer.lid = UUID()
+        }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MoodTableViewCell.identifier, for: indexPath) as! MoodTableViewCell
-        cell.moodLabel.text = dataSource[indexPath.row]
-        return cell
+    @IBAction private func filter(_ sender: UISegmentedControl) {
+        defer {
+            dataSource.fetch()
+        }
+        switch sender.selectedSegmentIndex {
+        case 1:
+            dataSource.setFetchRequest(fetchRequest: Answer.fetchByLid)
+            questionLabel.text = "My past moods."
+            saveButton.isEnabled = false
+        default:
+            dataSource.setFetchRequest(fetchRequest: Answer.fetchRequest)
+            questionLabel.text = "Which word best describes your day?"
+            saveButton.isEnabled = true
+        }
     }
 }
 

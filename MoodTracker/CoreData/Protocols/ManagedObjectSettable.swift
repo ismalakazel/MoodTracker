@@ -8,7 +8,7 @@ import CoreData
  
  */
 public protocol ManagedObjectSettable: class {
-    var managedObjectContext: NSManagedObjectContext! { get set }
+    var persistentContainer: PersistentContainer! { get set }
 }
 
 

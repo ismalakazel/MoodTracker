@@ -41,6 +41,16 @@ public final class ManagedTableViewDataSource<C: ManagedTableViewCell>: NSObject
     
     /**
      
+     Sets the fetch request that need to be performed by the NSFetchedResultsController.
+     
+     */
+    public func setFetchRequest(fetchRequest: NSFetchRequest<C.Model>) {
+        let moc = fetchedResultsController.managedObjectContext
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: C.Model.sectionNameKeyPath, cacheName: C.Model.cacheName)
+    }
+    
+    /**
+     
      Fetches managed object from the fetchedResultsController at a given IndexPath.
      
      - parameter indexPath: The index path to get the model from.
@@ -54,7 +64,8 @@ public final class ManagedTableViewDataSource<C: ManagedTableViewCell>: NSObject
     // MARK: - UITableViewDataSource
     
     public func numberOfSections(in tableView: UITableView) -> Int {
-        return fetchedResultsController.sections!.count
+        guard let sections = fetchedResultsController.sections else { return 0 }
+        return sections.count
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

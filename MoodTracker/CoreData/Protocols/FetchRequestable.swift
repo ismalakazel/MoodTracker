@@ -24,7 +24,7 @@ public protocol FetchResultControllable: AnyObject, NSFetchRequestResult {
     
     /**
      
-     The sectionNameKeyPath the FetchResultsController should user.
+     The sectionNameKeyPath the FetchResultsController should use.
      
      - remark: If this key path is not the same as that specified by the first sort descriptor in fetchRequest, they must generate the same relative orderings
      

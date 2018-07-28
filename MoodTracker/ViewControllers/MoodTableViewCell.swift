@@ -6,7 +6,7 @@ import UIKit
  A table view cell to display a single UILabel.
  
  */
-internal class MoodTableViewCell: UITableViewCell, ConfigurableCell {
+internal class MoodTableViewCell: UITableViewCell, ManagedTableViewCell {
     
     // MARK: - @IBOutlet
     
@@ -14,7 +14,7 @@ internal class MoodTableViewCell: UITableViewCell, ConfigurableCell {
     
     // MARK: - ConfigurableCell
     
-    func configure(with model: String) {
-        moodLabel.text = model
+    func configure(model: Answer) {
+        moodLabel.text = model.text
     }
 }

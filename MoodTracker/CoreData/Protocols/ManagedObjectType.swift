@@ -22,6 +22,6 @@ extension ManagedObjectType where Self: NSManagedObject {
         guard let entity = NSEntityDescription.entity(forEntityName: Self.entity().name!, in: moc) else {
             fatalError("Cannot create NSEntityDescription for \(Self.entity().name!))")
         }
-        self.init(entity: entity, insertInto: nil)
+        self.init(entity: entity, insertInto: moc)
     }
 }

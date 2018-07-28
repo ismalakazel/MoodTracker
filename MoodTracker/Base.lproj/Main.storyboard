@@ -13,16 +13,16 @@
         <!--Mood View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MoodViewController" customModule="CowMeNow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MoodViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="aaj-PA-eov">
-                                <rect key="frame" x="0.0" y="126" width="375" height="557"/>
+                                <rect key="frame" x="0.0" y="126" width="375" height="493"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MoodTableViewCell" rowHeight="121" id="MTH-7d-tcR" customClass="MoodTableViewCell" customModule="CowMeNow" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MoodTableViewCell" rowHeight="121" id="MTH-7d-tcR" customClass="MoodTableViewCell" customModule="MoodTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="121"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MTH-7d-tcR" id="mr3-a5-Re5">
@@ -52,7 +52,6 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Ihw-J7-0rs"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="WvN-mu-psw"/>
                                 </connections>
                             </tableView>
@@ -78,23 +77,38 @@
                                 <color key="textColor" red="0.0039215686274509803" green="0.16078431372549018" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FsM-7y-hdb">
+                                <rect key="frame" x="16" y="627" width="343" height="29"/>
+                                <segments>
+                                    <segment title="My Mood"/>
+                                    <segment title="My Past"/>
+                                </segments>
+                                <color key="tintColor" red="0.0039215686269999999" green="0.16078431369999999" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="filter:" destination="BYZ-38-t0r" eventType="valueChanged" id="fFj-sh-Iwg"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FsM-7y-hdb" secondAttribute="trailing" constant="16" id="05I-Cj-k9H"/>
+                            <constraint firstItem="FsM-7y-hdb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="1xb-K5-Dfe"/>
                             <constraint firstItem="C0j-2f-gMo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4nK-Im-jE7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="db5-df-HyA" secondAttribute="trailing" constant="16" id="D7y-vk-8md"/>
                             <constraint firstItem="aaj-PA-eov" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OQf-tM-ROu"/>
                             <constraint firstItem="aaj-PA-eov" firstAttribute="top" secondItem="db5-df-HyA" secondAttribute="bottom" constant="8" id="PUp-8J-prV"/>
+                            <constraint firstItem="FsM-7y-hdb" firstAttribute="top" secondItem="aaj-PA-eov" secondAttribute="bottom" constant="8" id="TGI-ht-Djm"/>
                             <constraint firstItem="C0j-2f-gMo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TiE-Ms-J5Z"/>
                             <constraint firstItem="db5-df-HyA" firstAttribute="top" secondItem="C0j-2f-gMo" secondAttribute="bottom" constant="33" id="V3t-ZO-EII"/>
                             <constraint firstItem="aaj-PA-eov" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="k33-Vl-eZd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FsM-7y-hdb" secondAttribute="bottom" constant="12" id="kh1-vY-Fhh"/>
                             <constraint firstItem="db5-df-HyA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="l30-rY-YDo"/>
-                            <constraint firstItem="aaj-PA-eov" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="16" id="lT8-Yx-Ch2"/>
                             <constraint firstItem="C0j-2f-gMo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="naP-HN-UIE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="questionLabel" destination="db5-df-HyA" id="gNU-53-0tq"/>
                         <outlet property="saveButton" destination="cfL-K5-4b9" id="k0d-Jg-gba"/>
                         <outlet property="tableView" destination="aaj-PA-eov" id="o3H-gd-hgh"/>
                     </connections>
