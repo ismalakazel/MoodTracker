@@ -3,18 +3,18 @@ import UIKit
 
 /**
  
- A table view cell to display a single UILabel.
+ A table view cell to display a word describing a mood.
  
  */
-internal class MoodTableViewCell: UITableViewCell, ManagedTableViewCell {
+internal class MoodTableViewCell: UITableViewCell, ConfigurableCell {
     
     // MARK: - @IBOutlet
     
     @IBOutlet weak var moodLabel: UILabel!
     
-    // MARK: - ConfigurableCell
+    // MARK: - ManagedTableViewCell
     
-    func configure(model: Answer) {
-        moodLabel.text = model.text
+    func configure(with model: String) {
+        moodLabel.text = model
     }
 }

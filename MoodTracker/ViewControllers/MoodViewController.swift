@@ -11,30 +11,24 @@ internal class MoodViewController: UIViewController, ManagedObjectSettable {
     
     // MARK: - ManagedObjectSettable
 
-    var persistentContainer: PersistentContainer!
+    var managedObjectContext: NSManagedObjectContext!
     
     // MARK: - UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ["Intelligent", "Okay", "Bad"].forEach { text in
-            let answer = Answer(moc: persistentContainer.viewContext)
-            answer.text = text
-        }
+        let data = ["Intelligent", "Okay", "Bad"]
+        dataSource = TableViewDataSource<MoodTableViewCell>()
+        dataSource.data = data
         tableView.dataSource = dataSource
-        dataSource.fetch()
+        tableView.rowHeight = 120
+        tableView.estimatedRowHeight = 120
+        tableView.reloadData()
     }
-
+    
     // MARK: - Property
     
-    private lazy var dataSource: ManagedTableViewDataSource<MoodTableViewCell>! = {
-        return ManagedTableViewDataSource<MoodTableViewCell>(tableView: tableView, moc: viewContext)
-    }()
-    
-    /// A context to save answers.
-    private lazy var viewContext: NSManagedObjectContext! = {
-       return persistentContainer.viewContext
-    }()
+    private var dataSource: TableViewDataSource<MoodTableViewCell>!
     
     // MARK: - @IBOutlet
 
@@ -48,25 +42,18 @@ internal class MoodViewController: UIViewController, ManagedObjectSettable {
 
     @IBAction private func save(_ sender: UIBarButtonItem) {
         guard let selection = tableView.indexPathForSelectedRow else { return }
-        viewContext.performChanges {
-            let answer = self.dataSource.objectAtIndexPath(selection)
+        managedObjectContext.performChanges {
+            // Save answer to context.
+            let answer = Answer(moc: self.managedObjectContext)
+            answer.text = self.dataSource.data[selection.row]
             answer.lid = UUID()
-        }
-    }
-    
-    @IBAction private func filter(_ sender: UISegmentedControl) {
-        defer {
-            dataSource.fetch()
-        }
-        switch sender.selectedSegmentIndex {
-        case 1:
-            dataSource.setFetchRequest(fetchRequest: Answer.fetchByLid)
-            questionLabel.text = "My past moods."
-            saveButton.isEnabled = false
-        default:
-            dataSource.setFetchRequest(fetchRequest: Answer.fetchRequest)
-            questionLabel.text = "Which word best describes your day?"
-            saveButton.isEnabled = true
+            answer.date = Date()
+            
+            // Save question to context.
+            let question = Question(moc: self.managedObjectContext)
+            question.text = self.questionLabel.text!
+            question.id = 1
+            question.date = Date()
         }
     }
 }
@@ -74,13 +61,14 @@ internal class MoodViewController: UIViewController, ManagedObjectSettable {
 // MARK: - UITableViewDelegate
 
 extension MoodViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath as IndexPath)?.accessoryType = .checkmark
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        // Necessary in order to remove checkmark after saving to core data.
+        tableView.visibleCells.forEach { cell in
+            cell.accessoryType = .none
+        }
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         saveButton.isEnabled = true
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath as IndexPath)?.accessoryType = .none
+        return indexPath
     }
 }
 

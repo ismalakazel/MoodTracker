@@ -17,15 +17,19 @@ final public class Answer: NSManagedObject, ManagedObjectType {
     /// The textual representation of this object.
     @NSManaged var text: String
     
-    static var fetchByLid: NSFetchRequest<Answer> {
-        let request = fetchRequest
-        request.predicate = NSPredicate(format: "lid != NULL")
-        return request
-    }
+    /// The date this answer was recorded.
+    @NSManaged var date: Date
+    
+    /// The numeric value of this object.
+    @NSManaged var weight: Int16
 }
 
 extension Answer: FetchResultControllable {
     public static var descriptors: [NSSortDescriptor]! {
-        return []
+        return [NSSortDescriptor(key: "date", ascending: true)]
+    }
+    
+    public static var predicate: NSPredicate {
+        return NSPredicate(format: "lid != NULL")
     }
 }

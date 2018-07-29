@@ -23,6 +23,13 @@ public protocol FetchResultControllable: AnyObject, NSFetchRequestResult {
     static var descriptors: [NSSortDescriptor]! { get }
     
     /**
+ 
+     The default NSPredicate of the implementer.
+     
+     */
+    static var predicate: NSPredicate { get }
+    
+    /**
      
      The sectionNameKeyPath the FetchResultsController should use.
      
@@ -50,6 +57,7 @@ extension FetchResultControllable {
     static var fetchRequest: NSFetchRequest<Self> {
         
         let request = NSFetchRequest<Self>(entityName: entityName)
+        request.predicate = predicate
         request.sortDescriptors = descriptors
         return request
     }
