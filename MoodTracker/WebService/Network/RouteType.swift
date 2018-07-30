@@ -9,6 +9,6 @@ protocol RouteType {
 
 extension RouteType {
     var host: String {
-        return ""
+        return "https://api.myjson.com/bins"
     }
 }

@@ -19,8 +19,6 @@ internal class PastMoodViewController: UIViewController, ManagedObjectSettable {
         super.viewDidLoad()
         dataSource.setFetchRequest(fetchRequest: Answer.fetchRequest)
         tableView.dataSource = dataSource
-        tableView.rowHeight = 120
-        tableView.estimatedRowHeight = 120
     }
     
     override func viewWillAppear(_ animated: Bool) {

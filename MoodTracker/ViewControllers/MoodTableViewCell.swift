@@ -14,7 +14,7 @@ internal class MoodTableViewCell: UITableViewCell, ConfigurableCell {
     
     // MARK: - ManagedTableViewCell
     
-    func configure(with model: String) {
-        moodLabel.text = model
+    func configure(with model: AnswerResponse) {
+        moodLabel.text = model.text
     }
 }

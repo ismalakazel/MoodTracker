@@ -41,7 +41,7 @@ extension RequestType {
      
      */
     func perform() {
-        URLSession(configuration: .ephemeral).dataTask(with: request) { data, response, error in
+        URLSession(configuration: .default).dataTask(with: request) { data, response, error in
             guard let data = data, let response = response as? HTTPURLResponse else { return }
             switch response.status {
             case .ok, .created: self.callback(.success(T.serialize(data)))

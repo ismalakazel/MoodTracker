@@ -6,10 +6,10 @@ import Foundation
  A protocol to manage cattle resources in the web service.
  
  */
-protocol WebServiceCattleManager { }
+protocol QuestionService { }
 
 
-extension WebServiceCattleManager {
+extension QuestionService {
     
     /**
      
@@ -18,7 +18,7 @@ extension WebServiceCattleManager {
      - parameter c: A callback with the serialized request result.
      
      */
-    public func list(_ c: @escaping (Result<Cattle>) -> ()) {
-        Request<CattleRoute, Cattle>(route: .list, c).perform()
+    public func list(_ c: @escaping (Result<QuestionResponse>) -> ()) {
+        Request<QuestionRoute, QuestionResponse>(route: .list, c).perform()
     }
 }

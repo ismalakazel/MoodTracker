@@ -16,6 +16,7 @@
 		582CEE1E210A8DA100D44B1F /* ManagedObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE1C210A8DA100D44B1F /* ManagedObjectType.swift */; };
 		58AAF66F210E10800018934A /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AAF66E210E10800018934A /* TableViewDataSource.swift */; };
 		58AAF671210E2C7E0018934A /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AAF670210E2C7E0018934A /* Question.swift */; };
+		58C7EFAA210E5D1200499855 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C7EFA9210E5D1200499855 /* LoadingView.swift */; };
 		58D42D61210A99BE00BF4A73 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE31210A954400D44B1F /* Serializable.swift */; };
 		58D42D62210A99BE00BF4A73 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE32210A954400D44B1F /* Result.swift */; };
 		58D42D63210A99BE00BF4A73 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE33210A954400D44B1F /* Method.swift */; };
@@ -24,8 +25,8 @@
 		58D42D66210A99BE00BF4A73 /* RouteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE36210A954400D44B1F /* RouteType.swift */; };
 		58D42D67210A99BE00BF4A73 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE37210A954400D44B1F /* Status.swift */; };
 		58D42D68210A99BE00BF4A73 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE38210A954400D44B1F /* RequestType.swift */; };
-		58D42D69210A99BE00BF4A73 /* CattleRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE2F210A954400D44B1F /* CattleRoute.swift */; };
-		58D42D6A210A99BE00BF4A73 /* WebServiceDeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE3B210A954400D44B1F /* WebServiceDeviceManager.swift */; };
+		58D42D69210A99BE00BF4A73 /* QuestionRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE2F210A954400D44B1F /* QuestionRoute.swift */; };
+		58D42D6A210A99BE00BF4A73 /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE3B210A954400D44B1F /* QuestionService.swift */; };
 		58D42D6B210A99BE00BF4A73 /* ManagedObjectSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE1B210A8DA100D44B1F /* ManagedObjectSettable.swift */; };
 		58D42D6C210A99BE00BF4A73 /* FetchRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE1A210A8DA100D44B1F /* FetchRequestable.swift */; };
 		58D42D6D210A99BE00BF4A73 /* ManagedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE16210A8DA100D44B1F /* ManagedTableViewCell.swift */; };
@@ -54,7 +55,7 @@
 		582CEE1A210A8DA100D44B1F /* FetchRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRequestable.swift; sourceTree = "<group>"; };
 		582CEE1B210A8DA100D44B1F /* ManagedObjectSettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectSettable.swift; sourceTree = "<group>"; };
 		582CEE1C210A8DA100D44B1F /* ManagedObjectType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectType.swift; sourceTree = "<group>"; };
-		582CEE2F210A954400D44B1F /* CattleRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CattleRoute.swift; sourceTree = "<group>"; };
+		582CEE2F210A954400D44B1F /* QuestionRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRoute.swift; sourceTree = "<group>"; };
 		582CEE31210A954400D44B1F /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		582CEE32210A954400D44B1F /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		582CEE33210A954400D44B1F /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
@@ -63,9 +64,10 @@
 		582CEE36210A954400D44B1F /* RouteType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteType.swift; sourceTree = "<group>"; };
 		582CEE37210A954400D44B1F /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		582CEE38210A954400D44B1F /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
-		582CEE3B210A954400D44B1F /* WebServiceDeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceDeviceManager.swift; sourceTree = "<group>"; };
+		582CEE3B210A954400D44B1F /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
 		58AAF66E210E10800018934A /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		58AAF670210E2C7E0018934A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		58C7EFA9210E5D1200499855 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		58D42D71210A9A8600BF4A73 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		58D42D76210C8A4C00BF4A73 /* ConfigurableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
 		58D42D78210C8A7300BF4A73 /* MoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTableViewCell.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				58D729FA210D690A0055221A /* PastMoodTableViewCell.swift */,
 				58D42D76210C8A4C00BF4A73 /* ConfigurableCell.swift */,
 				58AAF66E210E10800018934A /* TableViewDataSource.swift */,
+				58C7EFA9210E5D1200499855 /* LoadingView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -174,7 +177,7 @@
 		582CEE2A210A954400D44B1F /* Routes */ = {
 			isa = PBXGroup;
 			children = (
-				582CEE2F210A954400D44B1F /* CattleRoute.swift */,
+				582CEE2F210A954400D44B1F /* QuestionRoute.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -197,7 +200,7 @@
 		582CEE39210A954400D44B1F /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				582CEE3B210A954400D44B1F /* WebServiceDeviceManager.swift */,
+				582CEE3B210A954400D44B1F /* QuestionService.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -304,10 +307,10 @@
 				58D42D67210A99BE00BF4A73 /* Status.swift in Sources */,
 				58D42D86210CFC7300BF4A73 /* PastMoodViewController.swift in Sources */,
 				58D42D68210A99BE00BF4A73 /* RequestType.swift in Sources */,
-				58D42D69210A99BE00BF4A73 /* CattleRoute.swift in Sources */,
+				58D42D69210A99BE00BF4A73 /* QuestionRoute.swift in Sources */,
 				58D42D7F210C970A00BF4A73 /* Answer.swift in Sources */,
 				58D42D7C210C93A800BF4A73 /* Model.xcdatamodeld in Sources */,
-				58D42D6A210A99BE00BF4A73 /* WebServiceDeviceManager.swift in Sources */,
+				58D42D6A210A99BE00BF4A73 /* QuestionService.swift in Sources */,
 				58D42D77210C8A4C00BF4A73 /* ConfigurableCell.swift in Sources */,
 				58D42D6B210A99BE00BF4A73 /* ManagedObjectSettable.swift in Sources */,
 				58D42D79210C8A7300BF4A73 /* MoodTableViewCell.swift in Sources */,
@@ -318,6 +321,7 @@
 				582CEDFE210A887300D44B1F /* AppDelegate.swift in Sources */,
 				58AAF66F210E10800018934A /* TableViewDataSource.swift in Sources */,
 				582CEE1E210A8DA100D44B1F /* ManagedObjectType.swift in Sources */,
+				58C7EFAA210E5D1200499855 /* LoadingView.swift in Sources */,
 				58D42D84210CF76500BF4A73 /* TabBarController.swift in Sources */,
 				582CEE1D210A8DA100D44B1F /* PersistentContainer.swift in Sources */,
 				58D42D72210A9A8600BF4A73 /* Error.swift in Sources */,
@@ -397,7 +401,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -451,7 +455,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

@@ -11,17 +11,17 @@ final public class Answer: NSManagedObject, ManagedObjectType {
     /// The remote identifier of this object.
     @NSManaged var id: Int16
     
-    /// The local identifier of this object.
-    @NSManaged var lid: UUID?
-    
     /// The textual representation of this object.
     @NSManaged var text: String
     
-    /// The date this answer was recorded.
-    @NSManaged var date: Date
-    
     /// The numeric value of this object.
     @NSManaged var weight: Int16
+    
+    /// The local identifier of this object.
+    @NSManaged var lid: UUID?
+    
+    /// The date this answer was recorded.
+    @NSManaged var date: Date
 }
 
 extension Answer: FetchResultControllable {
