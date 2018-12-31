@@ -7,7 +7,7 @@ import CoreData
  A UITableViewDataSource that reacts to changes of a NSFetchedResultsController.
  
  */
-public final class ManagedTableViewDataSource<C: ManagedTableViewCell>: NSObject, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
+public final class ManagedTableViewDataSource<C: ManagedTableViewCell>: NSObject, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
     /**
      
@@ -75,8 +75,7 @@ public final class ManagedTableViewDataSource<C: ManagedTableViewCell>: NSObject
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let object = fetchedResultsController.object(at: indexPath)
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: C.identifier, for: indexPath) as? C
-            else { fatalError("Unexpected cell type at \(indexPath)") }
+        let cell = tableView.dequeueReusableCell(withIdentifier: C.identifier, for: indexPath) as! C
         cell.configure(model: object)
         return cell as! UITableViewCell
     }

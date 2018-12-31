@@ -17,10 +17,8 @@ internal class MoodViewController: UIViewController, ManagedObjectSettable, Ques
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Configure loading view.
-        loadingView.insertIn(view: self.view)
-
-        // Configure table view and data source.
+        loadingView.insertIn(view: view)
+        
         dataSource = TableViewDataSource<MoodTableViewCell>()
         tableView.dataSource = dataSource
         
@@ -37,7 +35,10 @@ internal class MoodViewController: UIViewController, ManagedObjectSettable, Ques
         }
     }
     
-    // MARK: - @IBOutlet
+    // MARK: - Private
+    
+    /// A data source to manage the list of answers in a table view.
+    private var dataSource: TableViewDataSource<MoodTableViewCell>!
     
     /// View shown when the controller is presented and dismissed when answers are loaded.
     @IBOutlet private weak var loadingView: LoadingView!
@@ -50,13 +51,6 @@ internal class MoodViewController: UIViewController, ManagedObjectSettable, Ques
 
     /// A save button that is only enabled after an answer is chosen.
     @IBOutlet private weak var saveButton: UIBarButtonItem!
-    
-    // MARK: - Property
-    
-    /// A data source to manage the list of answers in a table view.
-    private var dataSource: TableViewDataSource<MoodTableViewCell>!
-    
-    // MARK: - @IBAction
 
     /// Saves the question and the chosen answer to the persistent store.
     @IBAction private func save(_ sender: UIBarButtonItem) {
@@ -83,9 +77,7 @@ internal class MoodViewController: UIViewController, ManagedObjectSettable, Ques
 extension MoodViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         // Necessary in order to remove checkmark after saving to core data.
-        tableView.visibleCells.forEach { cell in
-            cell.accessoryType = .none
-        }
+        tableView.visibleCells.forEach { cell in cell.accessoryType = .none }
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         saveButton.isEnabled = true
         return indexPath

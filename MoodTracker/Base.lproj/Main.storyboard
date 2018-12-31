@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gNK-nG-otP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gNK-nG-otP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -117,7 +116,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Mood" image="ic-mood" id="rok-FJ-NfW"/>
+                    <tabBarItem key="tabBarItem" title="My Mood" image="icons8-stethoscope-500" id="rok-FJ-NfW"/>
                     <connections>
                         <outlet property="loadingView" destination="04z-q9-pPf" id="b2n-We-Yve"/>
                         <outlet property="questionLabel" destination="db5-df-HyA" id="gNU-53-0tq"/>
@@ -146,7 +145,7 @@
                     </connections>
                 </view>
             </objects>
-            <point key="canvasLocation" x="109.59999999999999" y="780.35982008995506"/>
+            <point key="canvasLocation" x="129" y="779"/>
         </scene>
         <!--Past Moods-->
         <scene sceneID="FQf-wx-aKa">
@@ -244,18 +243,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PI4-1t-YfW"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Past Moods" image="ic-past-moods" id="1uA-1b-hz4"/>
+                    <tabBarItem key="tabBarItem" title="Past Moods" image="icons8-wipes-500" id="1uA-1b-hz4"/>
                     <connections>
                         <outlet property="tableView" destination="osf-CU-hMu" id="bcw-K5-ZyO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="51g-hF-AUZ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781.60000000000002" y="779.46026986506752"/>
+            <point key="canvasLocation" x="842" y="779"/>
         </scene>
     </scenes>
     <resources>
-        <image name="ic-mood" width="32" height="32"/>
-        <image name="ic-past-moods" width="32" height="32"/>
+        <image name="icons8-stethoscope-500" width="24" height="25"/>
+        <image name="icons8-wipes-500" width="23" height="21"/>
     </resources>
 </document>

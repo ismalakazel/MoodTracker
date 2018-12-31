@@ -14,6 +14,7 @@
 		582CEE08210A887500D44B1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 582CEE06210A887500D44B1F /* LaunchScreen.storyboard */; };
 		582CEE1D210A8DA100D44B1F /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE18210A8DA100D44B1F /* PersistentContainer.swift */; };
 		582CEE1E210A8DA100D44B1F /* ManagedObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE1C210A8DA100D44B1F /* ManagedObjectType.swift */; };
+		585BA4DD21DA85A3007A87FD /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585BA4DC21DA85A3007A87FD /* HealthKit.framework */; };
 		58AAF66F210E10800018934A /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AAF66E210E10800018934A /* TableViewDataSource.swift */; };
 		58AAF671210E2C7E0018934A /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AAF670210E2C7E0018934A /* Question.swift */; };
 		58C7EFAA210E5D1200499855 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C7EFA9210E5D1200499855 /* LoadingView.swift */; };
@@ -65,6 +66,8 @@
 		582CEE37210A954400D44B1F /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		582CEE38210A954400D44B1F /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		582CEE3B210A954400D44B1F /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
+		585BA4DA21DA85A2007A87FD /* MoodTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoodTracker.entitlements; sourceTree = "<group>"; };
+		585BA4DC21DA85A3007A87FD /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		58AAF66E210E10800018934A /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		58AAF670210E2C7E0018934A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		58C7EFA9210E5D1200499855 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				585BA4DD21DA85A3007A87FD /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +98,7 @@
 			children = (
 				582CEDFC210A887300D44B1F /* MoodTracker */,
 				582CEDFB210A887300D44B1F /* Products */,
+				585BA4DB21DA85A3007A87FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +121,7 @@
 				582CEE04210A887500D44B1F /* Assets.xcassets */,
 				582CEE06210A887500D44B1F /* LaunchScreen.storyboard */,
 				582CEE09210A887500D44B1F /* Info.plist */,
+				585BA4DA21DA85A2007A87FD /* MoodTracker.entitlements */,
 			);
 			path = MoodTracker;
 			sourceTree = "<group>";
@@ -125,28 +131,11 @@
 			children = (
 				582CEE19210A8DA100D44B1F /* Protocols */,
 				58D42D7D210C96CA00BF4A73 /* Model */,
-				582CEE14210A8DA100D44B1F /* DataProvider */,
+				585BA4D921DA6FB1007A87FD /* DataSource */,
 				582CEE18210A8DA100D44B1F /* PersistentContainer.swift */,
 				58D42D7A210C93A800BF4A73 /* Model.xcdatamodeld */,
 			);
 			path = CoreData;
-			sourceTree = "<group>";
-		};
-		582CEE14210A8DA100D44B1F /* DataProvider */ = {
-			isa = PBXGroup;
-			children = (
-				582CEE15210A8DA100D44B1F /* Protocols */,
-				582CEE17210A8DA100D44B1F /* ManagedTableViewDataSource.swift */,
-			);
-			path = DataProvider;
-			sourceTree = "<group>";
-		};
-		582CEE15210A8DA100D44B1F /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				582CEE16210A8DA100D44B1F /* ManagedTableViewCell.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		582CEE19210A8DA100D44B1F /* Protocols */ = {
@@ -205,6 +194,23 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		585BA4D921DA6FB1007A87FD /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				582CEE16210A8DA100D44B1F /* ManagedTableViewCell.swift */,
+				582CEE17210A8DA100D44B1F /* ManagedTableViewDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		585BA4DB21DA85A3007A87FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				585BA4DC21DA85A3007A87FD /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		58D42D60210A999B00BF4A73 /* WebService */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +263,11 @@
 				TargetAttributes = {
 					582CEDF9210A887300D44B1F = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -468,6 +479,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MoodTracker/MoodTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M2G8475H22;
 				INFOPLIST_FILE = "$(SRCROOT)/MoodTracker/Info.plist";
@@ -475,7 +487,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.corujavirtual.CowMeNow;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.corujavirtual.MoodTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -486,6 +498,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MoodTracker/MoodTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M2G8475H22;
 				INFOPLIST_FILE = "$(SRCROOT)/MoodTracker/Info.plist";
@@ -493,7 +506,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.corujavirtual.CowMeNow;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.corujavirtual.MoodTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
