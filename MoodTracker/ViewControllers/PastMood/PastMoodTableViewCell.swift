@@ -6,7 +6,7 @@ import UIKit
  A table view cell to display past moods.
  
  */
-internal class PastMoodTableViewCell: UITableViewCell, ManagedTableViewCell {
+class PastMoodTableViewCell: UITableViewCell, ManagedTableViewCell {
     
     // MARK: - @IBOutlet
     

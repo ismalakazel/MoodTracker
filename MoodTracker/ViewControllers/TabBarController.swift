@@ -1,22 +1,25 @@
 import UIKit
 import CoreData
 
+
 /**
  
  The container that holds the main page view controller and a segmented control.
  
  */
-internal class TabBarController: UITabBarController, ManagedObjectSettable {
+class TabBarController: UITabBarController, PersistentContainerSettable {
+    
+    // MARK: - PersistentContainerSettable
 
-    // MARK: - ManagedObjectSettable
+    var container: PersistentContainer!
     
-    var managedObjectContext: NSManagedObjectContext!
-    
+    // MARK: - UITabBarController
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewControllers?.forEach { vc in
-            if let viewController = vc as? ManagedObjectSettable {
-                viewController.managedObjectContext = managedObjectContext
+        viewControllers?.forEach { destination in
+            if var destination = destination as? PersistentContainerSettable {
+                destination.container = container
             }
         }
     }

@@ -33,12 +33,19 @@ internal class LoadingView: UIView {
         self.centerYAnchor.constraint(equalTo: view.centerYAnchor)
     }
     
+    func load() {
+        layer.opacity = 1
+        isHidden = false
+    }
+    
     /// Hides this view using a fading animation.
     func dismiss() {
         let animator = UIViewPropertyAnimator(duration: 0.15, curve: .easeIn) {
             self.layer.opacity = 0
         }
-        animator.addCompletion { _ in self.removeFromSuperview() }
+        animator.addCompletion { _ in
+            self.isHidden = true
+        }
         animator.startAnimation()
     }
 }

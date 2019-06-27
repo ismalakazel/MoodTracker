@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gNK-nG-otP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gNK-nG-otP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -90,6 +90,24 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="WvN-mu-psw"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04z-q9-pPf" customClass="LoadingView" customModule="MoodTracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VoP-5D-7qK">
+                                        <rect key="frame" x="169" y="280.5" width="37" height="37"/>
+                                        <color key="color" red="0.0039215686269999999" green="0.16078431369999999" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="VoP-5D-7qK" firstAttribute="centerY" secondItem="04z-q9-pPf" secondAttribute="centerY" id="ZaI-9t-2oU"/>
+                                    <constraint firstItem="VoP-5D-7qK" firstAttribute="centerX" secondItem="04z-q9-pPf" secondAttribute="centerX" id="hpW-ay-XZd"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="5lO-88-Tla"/>
+                                <connections>
+                                    <outlet property="activityIndicator" destination="VoP-5D-7qK" id="fQm-R7-aYQ"/>
+                                </connections>
+                            </view>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0j-2f-gMo">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
@@ -107,12 +125,16 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="C0j-2f-gMo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4nK-Im-jE7"/>
+                            <constraint firstItem="04z-q9-pPf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6P7-Nx-RMm"/>
                             <constraint firstItem="aaj-PA-eov" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OQf-tM-ROu"/>
                             <constraint firstItem="C0j-2f-gMo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TiE-Ms-J5Z"/>
                             <constraint firstItem="aaj-PA-eov" firstAttribute="top" secondItem="C0j-2f-gMo" secondAttribute="bottom" id="YVX-v9-Wpo"/>
                             <constraint firstItem="aaj-PA-eov" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="f3v-28-RVA"/>
+                            <constraint firstItem="04z-q9-pPf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jVs-1g-SIz"/>
                             <constraint firstItem="aaj-PA-eov" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="k33-Vl-eZd"/>
                             <constraint firstItem="C0j-2f-gMo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="naP-HN-UIE"/>
+                            <constraint firstItem="04z-q9-pPf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="tJw-Hk-xo8"/>
+                            <constraint firstItem="04z-q9-pPf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="w80-H6-hAV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -125,27 +147,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="04z-q9-pPf" customClass="LoadingView" customModule="MoodTracker" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VoP-5D-7qK">
-                            <rect key="frame" x="106.5" y="106.5" width="37" height="37"/>
-                            <color key="color" red="0.0039215686269999999" green="0.16078431369999999" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
-                        </activityIndicatorView>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="VoP-5D-7qK" firstAttribute="centerY" secondItem="04z-q9-pPf" secondAttribute="centerY" id="ZaI-9t-2oU"/>
-                        <constraint firstItem="VoP-5D-7qK" firstAttribute="centerX" secondItem="04z-q9-pPf" secondAttribute="centerX" id="hpW-ay-XZd"/>
-                    </constraints>
-                    <viewLayoutGuide key="safeArea" id="5lO-88-Tla"/>
-                    <connections>
-                        <outlet property="activityIndicator" destination="VoP-5D-7qK" id="fQm-R7-aYQ"/>
-                    </connections>
-                </view>
             </objects>
-            <point key="canvasLocation" x="129" y="779"/>
+            <point key="canvasLocation" x="128.80000000000001" y="778.56071964017997"/>
         </scene>
         <!--Past Moods-->
         <scene sceneID="FQf-wx-aKa">

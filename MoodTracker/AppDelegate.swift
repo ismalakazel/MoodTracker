@@ -7,16 +7,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    private var persistentContainer: PersistentContainer!
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // Load model in the persistent container.
-        persistentContainer = PersistentContainer(name: "Model", store: .sqlite)
+        let persistentContainer = PersistentContainer(name: "Model", store: .sqlite)
         
-        // Pass the view context to the root view controller.
-        if let viewController = window?.rootViewController as? ManagedObjectSettable {
-            viewController.managedObjectContext = persistentContainer.viewContext
+        // Pass the persistent container to the root view controller.
+        if var viewController = window?.rootViewController as? PersistentContainerSettable {
+            viewController.container = persistentContainer
         }
         
         return true

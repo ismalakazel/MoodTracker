@@ -35,7 +35,7 @@ public final class ManagedTableViewDataSource<C: ManagedTableViewCell>: NSObject
             try self.fetchedResultsController.performFetch()
             self.tableView.reloadData()
         } catch {
-            // TODO: Handle error
+            fatalError(error.localizedDescription)
         }
     }
     
@@ -104,6 +104,7 @@ public final class ManagedTableViewDataSource<C: ManagedTableViewCell>: NSObject
         case .delete:
             guard let indexPath = indexPath else { fatalError("Index path should be not nil") }
             tableView.deleteRows(at: [indexPath], with: .fade)
+        @unknown default: break
         }
         tableView.reloadData()
     }
