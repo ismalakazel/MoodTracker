@@ -21,13 +21,6 @@ protocol RequestType {
      
      */
     var request: URLRequest! { get }
-    
-    /**
-    
-     The request callback.
-     
-     */
-    var callback: (Result<T>) -> () { get }
 }
 
 
@@ -40,13 +33,13 @@ extension RequestType {
      - parameter RequestResult<T>: The result of the request where T: ResponseType
      
      */
-    func perform() {
+    func perform(completionHandler: @escaping (Result<T, APIError>) -> ()) {
         URLSession(configuration: .default).dataTask(with: request) { data, response, error in
             guard let data = data, let response = response as? HTTPURLResponse else { return }
             switch response.status {
-            case .ok, .created: self.callback(.success(T.serialize(data)))
-            case .unprocessable: self.callback(.error(.decode(from: data)))
-            case .unauthorized: self.callback(.error(.decode(from: data)))
+            case .ok, .created: completionHandler(.success(T.serialize(data)))
+            case .unprocessable: completionHandler(.failure(.decode(from: data)))
+            case .unauthorized: completionHandler(.failure(.decode(from: data)))
             default: break
             }
         }.resume()

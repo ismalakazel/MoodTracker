@@ -11,11 +11,11 @@ class MoodModelController {
     }
     
     func fetch(completionHandler: @escaping (QuestionResponse) -> ()) {
-        Request<QuestionRoute, QuestionResponse>(route: .list) { result in
+        Request<QuestionRoute, QuestionResponse>(route: .list).perform { result in
             if case .success(let response) = result {
                 completionHandler(response)
             }
-        }.perform()
+        }
     }
     
     func save(answerResponse: AnswerResponse, and questionString: String) {
