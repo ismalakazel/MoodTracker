@@ -6,7 +6,7 @@ import UIKit
  A table view cell to display a word describing a mood.
  
  */
-internal class MoodTableViewCell: UITableViewCell, ConfigurableCell {
+class MoodTableViewCell: UITableViewCell, ConfigurableCell {
     
     // MARK: - @IBOutlet
     

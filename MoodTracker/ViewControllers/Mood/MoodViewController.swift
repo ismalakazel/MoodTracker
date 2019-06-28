@@ -38,7 +38,7 @@ class MoodViewController: UIViewController, PersistentContainerSettable, URLSess
 
         model.fetchQuestion { response in
             DispatchQueue.main.async { [weak self] in
-                self?.loadingView.dismiss()
+                self?.loadingView.hide()
                 self?.questionLabel.text = response.text
                 self?.dataSource.data = response.answers
                 self?.tableView.reloadData()

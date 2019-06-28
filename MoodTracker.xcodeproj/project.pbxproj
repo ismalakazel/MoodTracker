@@ -184,9 +184,6 @@
 				5888E92622C52E1100645C62 /* Mood */,
 				5888E92922C52F8800645C62 /* PastMood */,
 				58D42D83210CF76500BF4A73 /* TabBarController.swift */,
-				58D42D76210C8A4C00BF4A73 /* ConfigurableCell.swift */,
-				58AAF66E210E10800018934A /* TableViewDataSource.swift */,
-				58C7EFA9210E5D1200499855 /* LoadingView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -238,6 +235,9 @@
 			children = (
 				584AF92322C6322800CFCA6A /* URLSessionSettable.swift */,
 				5888E92E22C5353D00645C62 /* PersistentContainerSettable.swift */,
+				58AAF66E210E10800018934A /* TableViewDataSource.swift */,
+				58D42D76210C8A4C00BF4A73 /* ConfigurableCell.swift */,
+				58C7EFA9210E5D1200499855 /* LoadingView.swift */,
 			);
 			path = Compoenents;
 			sourceTree = "<group>";
