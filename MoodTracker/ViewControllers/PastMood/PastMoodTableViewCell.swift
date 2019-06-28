@@ -10,11 +10,13 @@ class PastMoodTableViewCell: UITableViewCell, ManagedTableViewCell {
     
     // MARK: - @IBOutlet
     
-    @IBOutlet weak var moodLabel: UILabel!
-    
+    @IBOutlet weak var answerLabel: UILabel!
+    @IBOutlet weak var questionLabel: UILabel!
+
     // MARK: - ManagedTableViewCell
     
     func configure(model: Answer) {
-        moodLabel.text = model.text
-    }
+        answerLabel.text = model.text
+        questionLabel.text = model.question.text
+   }
 }

@@ -22,6 +22,9 @@ final public class Answer: NSManagedObject, ManagedObjectType {
     
     /// The date this answer was recorded.
     @NSManaged var date: Date
+    
+    /// A question that is posed to the user.
+    @NSManaged var question: Question
 }
 
 extension Answer: FetchResultControllable {

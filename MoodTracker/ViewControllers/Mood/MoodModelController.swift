@@ -20,16 +20,24 @@ class MoodModelController {
     
     func save(answerResponse: AnswerResponse, and questionString: String) {
         saveContext.performChanges {
-            let answer = Answer(moc: self.saveContext)
-            answer.text = answerResponse.text
-            answer.weight = Int16(answerResponse.weight)
-            answer.lid = UUID()
-            answer.date = Date()
             
-            let question = Question(moc: self.saveContext)
-            question.text = questionString
-            question.id = Int16(Int.random(in: 0...100))
-            question.date = Date()
+            let answerPredicate = NSPredicate(format: "id = %i", answerResponse.id)
+            let answer = Answer.findOrCreate(in: self.saveContext, matching: answerPredicate) { answer in
+                answer.text = answerResponse.text
+                answer.weight = Int16(answerResponse.weight)
+                answer.lid = UUID()
+                answer.date = Date()
+            }
+
+            
+            let questionPredicate = NSPredicate(format: "text = %@", questionString)
+            let question = Question.findOrCreate(in: self.saveContext, matching: questionPredicate) { question in
+                question.text = questionString
+                question.date = Date()
+            }
+            
+            answer.question = question
+            question.answers.adding(answer)
         }
     }
 }
