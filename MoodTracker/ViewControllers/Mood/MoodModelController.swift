@@ -5,19 +5,20 @@ class MoodModelController {
     
     // MARK: - Private Property
     
-    private let queue = OperationQueue()
     private var saveContext: NSManagedObjectContext!
+    private var urlSession: URLSession!
     
     // MARK: - Initializer
     
-    init(container: PersistentContainer) {
+    init(container: PersistentContainer, session: URLSession) {
         saveContext = container.newBackgroundContext()
+        urlSession = session
     }
     
     // MARK: - Public Methods
 
     func fetchQuestion(completionHandler: @escaping (QuestionResponse) -> ()) {
-        Request<QuestionRoute, QuestionResponse>(route: .list).perform { result in
+        Request<QuestionRoute, QuestionResponse>(route: .list, session: urlSession).perform { result in
             if case .success(let response) = result {
                 completionHandler(response)
             }

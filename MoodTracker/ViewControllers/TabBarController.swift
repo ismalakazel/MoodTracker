@@ -18,6 +18,10 @@ class TabBarController: UITabBarController, PersistentContainerSettable {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewControllers?.forEach { destination in
+            if var destination = destination as? URLSessionSettable {
+                destination.session = URLSession.shared
+            }
+            
             if var destination = destination as? PersistentContainerSettable {
                 destination.container = container
             }

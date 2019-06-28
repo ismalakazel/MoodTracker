@@ -15,6 +15,10 @@
 		582CEE1D210A8DA100D44B1F /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE18210A8DA100D44B1F /* PersistentContainer.swift */; };
 		582CEE1E210A8DA100D44B1F /* ManagedObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE1C210A8DA100D44B1F /* ManagedObjectType.swift */; };
 		582D196222C5985E00C7D186 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D196122C5985E00C7D186 /* NSManagedObjectContext+Extensions.swift */; };
+		584AF91722C61EC500CFCA6A /* MockURLProcotol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584AF91622C61EC500CFCA6A /* MockURLProcotol.swift */; };
+		584AF91922C61FCF00CFCA6A /* MoodModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584AF91822C61FCF00CFCA6A /* MoodModelControllerTests.swift */; };
+		584AF91D22C626AD00CFCA6A /* get_question.json in Resources */ = {isa = PBXBuildFile; fileRef = 584AF91C22C626AD00CFCA6A /* get_question.json */; };
+		584AF92422C6322800CFCA6A /* URLSessionSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584AF92322C6322800CFCA6A /* URLSessionSettable.swift */; };
 		585BA4DD21DA85A3007A87FD /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585BA4DC21DA85A3007A87FD /* HealthKit.framework */; };
 		5888E92B22C5303100645C62 /* PastMoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5888E92A22C5303100645C62 /* PastMoodTableViewCell.swift */; };
 		5888E92D22C5328D00645C62 /* MoodModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5888E92C22C5328D00645C62 /* MoodModelController.swift */; };
@@ -42,6 +46,16 @@
 		58D42D86210CFC7300BF4A73 /* PastMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D42D85210CFC7300BF4A73 /* PastMoodViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		584AF91122C61EB000CFCA6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 582CEDF2210A887300D44B1F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 582CEDF9210A887300D44B1F;
+			remoteInfo = MoodTracker;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		582CEDFA210A887300D44B1F /* MoodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		582CEDFD210A887300D44B1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +78,12 @@
 		582CEE37210A954400D44B1F /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		582CEE38210A954400D44B1F /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		582D196122C5985E00C7D186 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
+		584AF90C22C61EB000CFCA6A /* MoodTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoodTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		584AF91022C61EB000CFCA6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		584AF91622C61EC500CFCA6A /* MockURLProcotol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProcotol.swift; sourceTree = "<group>"; };
+		584AF91822C61FCF00CFCA6A /* MoodModelControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodModelControllerTests.swift; sourceTree = "<group>"; };
+		584AF91C22C626AD00CFCA6A /* get_question.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = get_question.json; sourceTree = "<group>"; };
+		584AF92322C6322800CFCA6A /* URLSessionSettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionSettable.swift; sourceTree = "<group>"; };
 		585BA4DA21DA85A2007A87FD /* MoodTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoodTracker.entitlements; sourceTree = "<group>"; };
 		585BA4DC21DA85A3007A87FD /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		5888E92A22C5303100645C62 /* PastMoodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastMoodTableViewCell.swift; sourceTree = "<group>"; };
@@ -90,6 +110,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		584AF90922C61EB000CFCA6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -97,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				582CEDFC210A887300D44B1F /* MoodTracker */,
+				584AF90D22C61EB000CFCA6A /* MoodTrackerTests */,
 				582CEDFB210A887300D44B1F /* Products */,
 				585BA4DB21DA85A3007A87FD /* Frameworks */,
 			);
@@ -106,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				582CEDFA210A887300D44B1F /* MoodTracker.app */,
+				584AF90C22C61EB000CFCA6A /* MoodTrackerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,6 +144,7 @@
 			children = (
 				58D42D60210A999B00BF4A73 /* WebService */,
 				582CEE0F210A891900D44B1F /* CoreData */,
+				584AF92222C6321700CFCA6A /* Compoenents */,
 				582CEE1F210A91A100D44B1F /* ViewControllers */,
 				582CEDFD210A887300D44B1F /* AppDelegate.swift */,
 				582CEE01210A887300D44B1F /* Main.storyboard */,
@@ -144,7 +174,6 @@
 			children = (
 				582CEE1C210A8DA100D44B1F /* ManagedObjectType.swift */,
 				582CEE1A210A8DA100D44B1F /* FetchRequestable.swift */,
-				5888E92E22C5353D00645C62 /* PersistentContainerSettable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -191,6 +220,42 @@
 				582D196122C5985E00C7D186 /* NSManagedObjectContext+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		584AF90D22C61EB000CFCA6A /* MoodTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				584AF92722C63C3400CFCA6A /* componenets */,
+				584AF92822C63C4200CFCA6A /* responses */,
+				584AF91822C61FCF00CFCA6A /* MoodModelControllerTests.swift */,
+				584AF91022C61EB000CFCA6A /* Info.plist */,
+			);
+			path = MoodTrackerTests;
+			sourceTree = "<group>";
+		};
+		584AF92222C6321700CFCA6A /* Compoenents */ = {
+			isa = PBXGroup;
+			children = (
+				584AF92322C6322800CFCA6A /* URLSessionSettable.swift */,
+				5888E92E22C5353D00645C62 /* PersistentContainerSettable.swift */,
+			);
+			path = Compoenents;
+			sourceTree = "<group>";
+		};
+		584AF92722C63C3400CFCA6A /* componenets */ = {
+			isa = PBXGroup;
+			children = (
+				584AF91622C61EC500CFCA6A /* MockURLProcotol.swift */,
+			);
+			path = componenets;
+			sourceTree = "<group>";
+		};
+		584AF92822C63C4200CFCA6A /* responses */ = {
+			isa = PBXGroup;
+			children = (
+				584AF91C22C626AD00CFCA6A /* get_question.json */,
+			);
+			path = responses;
 			sourceTree = "<group>";
 		};
 		585BA4D921DA6FB1007A87FD /* DataSource */ = {
@@ -267,13 +332,31 @@
 			productReference = 582CEDFA210A887300D44B1F /* MoodTracker.app */;
 			productType = "com.apple.product-type.application";
 		};
+		584AF90B22C61EB000CFCA6A /* MoodTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 584AF91522C61EB000CFCA6A /* Build configuration list for PBXNativeTarget "MoodTrackerTests" */;
+			buildPhases = (
+				584AF90822C61EB000CFCA6A /* Sources */,
+				584AF90922C61EB000CFCA6A /* Frameworks */,
+				584AF90A22C61EB000CFCA6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				584AF91222C61EB000CFCA6A /* PBXTargetDependency */,
+			);
+			name = MoodTrackerTests;
+			productName = MoodTrackerTests;
+			productReference = 584AF90C22C61EB000CFCA6A /* MoodTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		582CEDF2210A887300D44B1F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Israel P. T. da Silva";
 				TargetAttributes = {
@@ -284,6 +367,10 @@
 								enabled = 1;
 							};
 						};
+					};
+					584AF90B22C61EB000CFCA6A = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 582CEDF9210A887300D44B1F;
 					};
 				};
 			};
@@ -301,6 +388,7 @@
 			projectRoot = "";
 			targets = (
 				582CEDF9210A887300D44B1F /* MoodTracker */,
+				584AF90B22C61EB000CFCA6A /* MoodTrackerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -313,6 +401,14 @@
 				582CEE08210A887500D44B1F /* LaunchScreen.storyboard in Resources */,
 				582CEE05210A887500D44B1F /* Assets.xcassets in Resources */,
 				582CEE03210A887300D44B1F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		584AF90A22C61EB000CFCA6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				584AF91D22C626AD00CFCA6A /* get_question.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +443,7 @@
 				582CEE00210A887300D44B1F /* MoodViewController.swift in Sources */,
 				582CEDFE210A887300D44B1F /* AppDelegate.swift in Sources */,
 				58AAF66F210E10800018934A /* TableViewDataSource.swift in Sources */,
+				584AF92422C6322800CFCA6A /* URLSessionSettable.swift in Sources */,
 				582CEE1E210A8DA100D44B1F /* ManagedObjectType.swift in Sources */,
 				58C7EFAA210E5D1200499855 /* LoadingView.swift in Sources */,
 				58D42D84210CF76500BF4A73 /* TabBarController.swift in Sources */,
@@ -355,7 +452,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		584AF90822C61EB000CFCA6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				584AF91722C61EC500CFCA6A /* MockURLProcotol.swift in Sources */,
+				584AF91922C61FCF00CFCA6A /* MoodModelControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		584AF91222C61EB000CFCA6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 582CEDF9210A887300D44B1F /* MoodTracker */;
+			targetProxy = 584AF91122C61EB000CFCA6A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		582CEE01210A887300D44B1F /* Main.storyboard */ = {
@@ -529,6 +643,51 @@
 			};
 			name = Release;
 		};
+		584AF91322C61EB000CFCA6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M2G8475H22;
+				INFOPLIST_FILE = MoodTrackerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.corujavirtual.MoodTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoodTracker.app/MoodTracker";
+			};
+			name = Debug;
+		};
+		584AF91422C61EB000CFCA6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M2G8475H22;
+				INFOPLIST_FILE = MoodTrackerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.corujavirtual.MoodTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoodTracker.app/MoodTracker";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -546,6 +705,15 @@
 			buildConfigurations = (
 				582CEE0D210A887500D44B1F /* Debug */,
 				582CEE0E210A887500D44B1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		584AF91522C61EB000CFCA6A /* Build configuration list for PBXNativeTarget "MoodTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				584AF91322C61EB000CFCA6A /* Debug */,
+				584AF91422C61EB000CFCA6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

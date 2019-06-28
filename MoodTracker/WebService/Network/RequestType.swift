@@ -16,6 +16,13 @@ protocol RequestType {
     associatedtype T: Serializable
     
     /**
+     
+     The URLSession to perform the request in.
+     
+     */
+    var session: URLSession! { get }
+    
+    /**
    
      The request to be performed.
      
@@ -34,7 +41,7 @@ extension RequestType {
      
      */
     func perform(completionHandler: @escaping (Result<T, APIError>) -> ()) {
-        URLSession(configuration: .default).dataTask(with: request) { data, response, error in
+        session.dataTask(with: request) { data, response, error in
             guard let data = data, let response = response as? HTTPURLResponse else { return }
             switch response.status {
             case .ok, .created: completionHandler(.success(T.serialize(data)))

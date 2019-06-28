@@ -7,29 +7,33 @@ import CoreData
  A view controller that manages a table view of words you today.
  
  */
-class MoodViewController: UIViewController, PersistentContainerSettable {
+class MoodViewController: UIViewController, PersistentContainerSettable, URLSessionSettable {
+    
+    // MARK: - URLSessionSettable
+    
+    var session: URLSession!
     
     // MARK: - PersistentContainerSettable
 
     var container: PersistentContainer!
+    
+    // MARK: - IBOutlet
+    
+    @IBOutlet private(set) weak var loadingView: LoadingView!
+    @IBOutlet private(set) weak var questionLabel: UILabel!
+    @IBOutlet private(set) weak var tableView: UITableView!
+    @IBOutlet private(set) weak var saveButton: UIBarButtonItem!
     
     // MARK: - Private Property
 
     private var model: MoodModelController!
     private var dataSource = TableViewDataSource<MoodTableViewCell>()
     
-    // MARK: - IBOutlet
-
-    @IBOutlet private weak var loadingView: LoadingView!
-    @IBOutlet private weak var questionLabel: UILabel!
-    @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var saveButton: UIBarButtonItem!
-    
     // MARK: - UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        model = MoodModelController(container: container)
+        model = MoodModelController(container: container, session: session)
         tableView.dataSource = dataSource
 
         model.fetchQuestion { response in

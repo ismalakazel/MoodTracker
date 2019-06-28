@@ -1,0 +1,21 @@
+{
+    "id": 1,
+    "text": "How are you feeling today?",
+    "answers": [
+        {
+            "id": 1,
+            "text": "Intelligent",
+            "weight": 3
+        },
+        {
+            "id": 2,
+            "text": "Good",
+            "weight": 2
+        },
+        {
+            "id": 3,
+            "text": "Bad",
+            "weight": 1
+        }
+    ]
+}

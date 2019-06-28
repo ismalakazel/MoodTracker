@@ -8,15 +8,17 @@ import Foundation
  */
 struct Request<R: RouteType, T: Serializable>: RequestType {
     
-    var request: URLRequest!
-        
-    init(route: R) {
-        self.request = URLRequest(url: URL(string: route.description.url)!)
-        self.request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-        self.request.httpMethod = route.description.method.description
-        self.request.httpBody = route.description.method.body as? Data
-        self.request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        self.request.setValue("application/json", forHTTPHeaderField: "Accept")
+    private(set) var session: URLSession!
+    private(set) var request: URLRequest!
+
+    init(route: R, session: URLSession = .shared) {
+        self.session = session
+        request = URLRequest(url: URL(string: route.description.url)!)
+        request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+        request.httpMethod = route.description.method.description
+        request.httpBody = route.description.method.body as? Data
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
     }
 }
 
