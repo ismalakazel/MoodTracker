@@ -32,7 +32,6 @@
 		58D42D67210A99BE00BF4A73 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE37210A954400D44B1F /* Status.swift */; };
 		58D42D68210A99BE00BF4A73 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE38210A954400D44B1F /* RequestType.swift */; };
 		58D42D69210A99BE00BF4A73 /* QuestionRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE2F210A954400D44B1F /* QuestionRoute.swift */; };
-		58D42D6A210A99BE00BF4A73 /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE3B210A954400D44B1F /* QuestionService.swift */; };
 		58D42D6C210A99BE00BF4A73 /* FetchRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE1A210A8DA100D44B1F /* FetchRequestable.swift */; };
 		58D42D6D210A99BE00BF4A73 /* ManagedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE16210A8DA100D44B1F /* ManagedTableViewCell.swift */; };
 		58D42D6E210A99BE00BF4A73 /* ManagedTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CEE17210A8DA100D44B1F /* ManagedTableViewDataSource.swift */; };
@@ -67,7 +66,6 @@
 		582CEE36210A954400D44B1F /* RouteType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteType.swift; sourceTree = "<group>"; };
 		582CEE37210A954400D44B1F /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		582CEE38210A954400D44B1F /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
-		582CEE3B210A954400D44B1F /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
 		582D196122C5985E00C7D186 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		585BA4DA21DA85A2007A87FD /* MoodTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoodTracker.entitlements; sourceTree = "<group>"; };
 		585BA4DC21DA85A3007A87FD /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -192,14 +190,6 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		582CEE39210A954400D44B1F /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				582CEE3B210A954400D44B1F /* QuestionService.swift */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
 		582D196322C5987D00C7D186 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,7 +247,6 @@
 			children = (
 				582CEE30210A954400D44B1F /* Network */,
 				582CEE2A210A954400D44B1F /* Routes */,
-				582CEE39210A954400D44B1F /* Protocol */,
 				58D42D71210A9A8600BF4A73 /* Error.swift */,
 			);
 			path = WebService;
@@ -365,7 +354,6 @@
 				58D42D7C210C93A800BF4A73 /* Model.xcdatamodeld in Sources */,
 				5888E92F22C5353D00645C62 /* PersistentContainerSettable.swift in Sources */,
 				5888E92D22C5328D00645C62 /* MoodModelController.swift in Sources */,
-				58D42D6A210A99BE00BF4A73 /* QuestionService.swift in Sources */,
 				58D42D77210C8A4C00BF4A73 /* ConfigurableCell.swift in Sources */,
 				58D42D79210C8A7300BF4A73 /* MoodTableViewCell.swift in Sources */,
 				58D42D6C210A99BE00BF4A73 /* FetchRequestable.swift in Sources */,
