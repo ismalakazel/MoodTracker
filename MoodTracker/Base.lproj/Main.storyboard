@@ -91,10 +91,10 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04z-q9-pPf" customClass="LoadingView" customModule="MoodTracker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VoP-5D-7qK">
-                                        <rect key="frame" x="169" y="280.5" width="37" height="37"/>
+                                        <rect key="frame" x="169" y="258.5" width="37" height="37"/>
                                         <color key="color" red="0.0039215686269999999" green="0.16078431369999999" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
                                 </subviews>
@@ -111,7 +111,7 @@
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0j-2f-gMo">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
-                                    <navigationItem id="fHO-Gc-VAW">
+                                    <navigationItem title="My Mood" id="fHO-Gc-VAW">
                                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="SAVE" id="cfL-K5-4b9">
                                             <color key="tintColor" red="0.0039215686269999999" green="0.16078431369999999" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
@@ -124,15 +124,15 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="C0j-2f-gMo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4nK-Im-jE7"/>
-                            <constraint firstItem="04z-q9-pPf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6P7-Nx-RMm"/>
+                            <constraint firstItem="C0j-2f-gMo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2bZ-OM-kPd"/>
                             <constraint firstItem="aaj-PA-eov" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OQf-tM-ROu"/>
-                            <constraint firstItem="C0j-2f-gMo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TiE-Ms-J5Z"/>
-                            <constraint firstItem="aaj-PA-eov" firstAttribute="top" secondItem="C0j-2f-gMo" secondAttribute="bottom" id="YVX-v9-Wpo"/>
+                            <constraint firstItem="C0j-2f-gMo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Qs0-7t-i38"/>
+                            <constraint firstItem="aaj-PA-eov" firstAttribute="top" secondItem="C0j-2f-gMo" secondAttribute="bottom" id="Vs2-tk-hP3"/>
+                            <constraint firstItem="C0j-2f-gMo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dPM-kl-4FI"/>
                             <constraint firstItem="aaj-PA-eov" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="f3v-28-RVA"/>
                             <constraint firstItem="04z-q9-pPf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jVs-1g-SIz"/>
                             <constraint firstItem="aaj-PA-eov" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="k33-Vl-eZd"/>
-                            <constraint firstItem="C0j-2f-gMo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="naP-HN-UIE"/>
+                            <constraint firstItem="04z-q9-pPf" firstAttribute="top" secondItem="C0j-2f-gMo" secondAttribute="bottom" id="qcX-HA-kZi"/>
                             <constraint firstItem="04z-q9-pPf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="tJw-Hk-xo8"/>
                             <constraint firstItem="04z-q9-pPf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="w80-H6-hAV"/>
                         </constraints>
@@ -159,30 +159,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" rowHeight="120" estimatedRowHeight="120" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="osf-CU-hMu">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="xVE-dz-7iY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My past moods." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZX6-Yx-Yfs">
-                                            <rect key="frame" x="16" y="14" width="343" height="21"/>
-                                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
-                                            <color key="textColor" red="0.0039215686269999999" green="0.16078431369999999" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                            <size key="shadowOffset" width="0.0" height="0.0"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="ZX6-Yx-Yfs" firstAttribute="leading" secondItem="xVE-dz-7iY" secondAttribute="leading" constant="16" id="44Y-vU-v8V"/>
-                                        <constraint firstAttribute="bottom" secondItem="ZX6-Yx-Yfs" secondAttribute="bottom" constant="21" id="DdL-vv-xD2"/>
-                                        <constraint firstAttribute="trailing" secondItem="ZX6-Yx-Yfs" secondAttribute="trailing" constant="16" id="Ff4-lh-nwg"/>
-                                        <constraint firstItem="ZX6-Yx-Yfs" firstAttribute="top" secondItem="xVE-dz-7iY" secondAttribute="top" constant="14" id="odK-MR-gUl"/>
-                                    </constraints>
-                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PastMoodTableViewCell" rowHeight="120" id="2kf-xo-lj3" customClass="PastMoodTableViewCell" customModule="MoodTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="111.5" width="375" height="120"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2kf-xo-lj3" id="0dT-UU-MCf">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
@@ -225,13 +206,22 @@
                                     <outlet property="delegate" destination="cEl-MB-9rV" id="ywL-Ux-wJw"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4i4-tA-88O">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Past Moods" id="biM-pZ-wPe"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="4i4-tA-88O" firstAttribute="trailing" secondItem="PI4-1t-YfW" secondAttribute="trailing" id="1Zt-P5-Q9Z"/>
                             <constraint firstItem="osf-CU-hMu" firstAttribute="leading" secondItem="PI4-1t-YfW" secondAttribute="leading" id="LUQ-xU-jWS"/>
-                            <constraint firstItem="osf-CU-hMu" firstAttribute="top" secondItem="PI4-1t-YfW" secondAttribute="top" id="OiM-Qb-TE0"/>
                             <constraint firstItem="osf-CU-hMu" firstAttribute="trailing" secondItem="PI4-1t-YfW" secondAttribute="trailing" id="QD2-R1-npT"/>
+                            <constraint firstItem="osf-CU-hMu" firstAttribute="top" secondItem="4i4-tA-88O" secondAttribute="bottom" id="X45-hA-RhL"/>
+                            <constraint firstItem="4i4-tA-88O" firstAttribute="top" secondItem="PI4-1t-YfW" secondAttribute="top" id="Z2a-fk-fp8"/>
                             <constraint firstItem="osf-CU-hMu" firstAttribute="bottom" secondItem="PI4-1t-YfW" secondAttribute="bottom" id="g1Z-Sv-srA"/>
+                            <constraint firstItem="4i4-tA-88O" firstAttribute="leading" secondItem="PI4-1t-YfW" secondAttribute="leading" id="wmR-SO-EIR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PI4-1t-YfW"/>
                     </view>
@@ -242,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="51g-hF-AUZ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="842" y="779"/>
+            <point key="canvasLocation" x="840.79999999999995" y="778.56071964017997"/>
         </scene>
     </scenes>
     <resources>

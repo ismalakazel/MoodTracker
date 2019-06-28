@@ -46,7 +46,7 @@ public final class ManagedTableViewDataSource<C: ManagedTableViewCell>: NSObject
      */
     public func setFetchRequest(fetchRequest: NSFetchRequest<C.Model>) {
         let moc = fetchedResultsController.managedObjectContext
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: C.Model.sectionNameKeyPath, cacheName: C.Model.cacheName)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: C.Model.cacheName)
     }
     
     /**
