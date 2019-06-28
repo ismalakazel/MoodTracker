@@ -32,7 +32,7 @@ class MoodViewController: UIViewController, PersistentContainerSettable {
         model = MoodModelController(container: container)
         tableView.dataSource = dataSource
 
-        model.fetch { response in
+        model.fetchQuestion { response in
             DispatchQueue.main.async { [weak self] in
                 self?.loadingView.dismiss()
                 self?.questionLabel.text = response.text

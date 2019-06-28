@@ -3,14 +3,20 @@ import CoreData
 
 class MoodModelController {
     
+    // MARK: - Private Property
+    
     private let queue = OperationQueue()
     private var saveContext: NSManagedObjectContext!
+    
+    // MARK: - Initializer
     
     init(container: PersistentContainer) {
         saveContext = container.newBackgroundContext()
     }
     
-    func fetch(completionHandler: @escaping (QuestionResponse) -> ()) {
+    // MARK: - Public Methods
+
+    func fetchQuestion(completionHandler: @escaping (QuestionResponse) -> ()) {
         Request<QuestionRoute, QuestionResponse>(route: .list).perform { result in
             if case .success(let response) = result {
                 completionHandler(response)
