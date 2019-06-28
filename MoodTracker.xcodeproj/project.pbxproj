@@ -19,7 +19,6 @@
 		5888E92B22C5303100645C62 /* PastMoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5888E92A22C5303100645C62 /* PastMoodTableViewCell.swift */; };
 		5888E92D22C5328D00645C62 /* MoodModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5888E92C22C5328D00645C62 /* MoodModelController.swift */; };
 		5888E92F22C5353D00645C62 /* PersistentContainerSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5888E92E22C5353D00645C62 /* PersistentContainerSettable.swift */; };
-		5888E93222C53DBB00645C62 /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5888E93122C53DBB00645C62 /* BaseOperation.swift */; };
 		58AAF66F210E10800018934A /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AAF66E210E10800018934A /* TableViewDataSource.swift */; };
 		58AAF671210E2C7E0018934A /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AAF670210E2C7E0018934A /* Question.swift */; };
 		58C7EFAA210E5D1200499855 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C7EFA9210E5D1200499855 /* LoadingView.swift */; };
@@ -70,7 +69,6 @@
 		5888E92A22C5303100645C62 /* PastMoodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastMoodTableViewCell.swift; sourceTree = "<group>"; };
 		5888E92C22C5328D00645C62 /* MoodModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodModelController.swift; sourceTree = "<group>"; };
 		5888E92E22C5353D00645C62 /* PersistentContainerSettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainerSettable.swift; sourceTree = "<group>"; };
-		5888E93122C53DBB00645C62 /* BaseOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
 		58AAF66E210E10800018934A /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		58AAF670210E2C7E0018934A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		58C7EFA9210E5D1200499855 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 		582CEDFC210A887300D44B1F /* MoodTracker */ = {
 			isa = PBXGroup;
 			children = (
-				5888E93022C53DAC00645C62 /* Components */,
 				58D42D60210A999B00BF4A73 /* WebService */,
 				582CEE0F210A891900D44B1F /* CoreData */,
 				582CEE1F210A91A100D44B1F /* ViewControllers */,
@@ -230,14 +227,6 @@
 				5888E92A22C5303100645C62 /* PastMoodTableViewCell.swift */,
 			);
 			path = PastMood;
-			sourceTree = "<group>";
-		};
-		5888E93022C53DAC00645C62 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				5888E93122C53DBB00645C62 /* BaseOperation.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		58D42D60210A999B00BF4A73 /* WebService */ = {
@@ -358,7 +347,6 @@
 				582CEE00210A887300D44B1F /* MoodViewController.swift in Sources */,
 				582CEDFE210A887300D44B1F /* AppDelegate.swift in Sources */,
 				58AAF66F210E10800018934A /* TableViewDataSource.swift in Sources */,
-				5888E93222C53DBB00645C62 /* BaseOperation.swift in Sources */,
 				582CEE1E210A8DA100D44B1F /* ManagedObjectType.swift in Sources */,
 				58C7EFAA210E5D1200499855 /* LoadingView.swift in Sources */,
 				58D42D84210CF76500BF4A73 /* TabBarController.swift in Sources */,
